@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学习属性特性</title>
+
+    <script type="text/javascript">
+        var user={
+            sex:false
+        }
+
+        Object.defineProperty(user,'age',{
+//            value:28,
+//            writable:true,
+            enumerable:true,
+            configurable:true,
+            get:function () {
+                return 100;
+            }
+        });
+
+        user.age=30;
+        console.log(user.age);
+        console.log('keys:'+Object.keys(user));
+        for(u in user){
+            console.log(u);
+        }
+
+        Object.defineProperty(user,'sex',{
+            writable:true,
+        });
+
+        user.age=35;
+        console.log(user.age);
+        user.sex=true;
+        console.log(user.sex);
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
