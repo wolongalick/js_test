@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习property</title>
+
+    <script type=text/javascript>
+
+        var person={
+
+        }
+
+        /**
+         * 同时设置person对象的多个属性
+         */
+        Object.defineProperties(person,{
+            'username':{
+                value:'king',
+                writable:true,
+                enumerable:true,
+                configurable:true
+            },
+            'age':{
+                value:28,
+                writable:true,
+            }
+        });
+
+        console.log(person.username);
+
+        var person2=Object.create(person);
+
+        //person是否为person2的对象原型,(打印true)
+        console.log(person.isPrototypeOf(person2));
+        //Object.prototype是否为person2的对象原型,(打印true)
+        console.log(Object.prototype.isPrototypeOf(person2));
+
+
+        var arr=new Array();
+        console.log(Object.prototype.toString.call(arr));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
